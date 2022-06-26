@@ -31,9 +31,10 @@
 <style>
    header {
       font-size: 12px;
-      position: sticky;
+      position: absolute;
       top: 0;
-      /* width: 100%; */
+      width: 100%;
+      z-index: 20;
    }
 
    .header__contact {

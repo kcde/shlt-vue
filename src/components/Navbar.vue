@@ -38,12 +38,9 @@
          <a href="#">Blog</a>
          <a href="#">Buy</a>
          <a href="#">Properties</a>
-         <div class="sub-list">
+         <div class="sub-list" @click="toggleSubMenu">
             <a href="#">How it works</a>
-            <i
-               class="fa-solid fa-caret-down"
-               style="margin-left: 5px"
-               @click="toggleSubMenu"></i>
+            <i class="fa-solid fa-caret-down" style="margin-left: 5px"></i>
 
             <div v-show="subMenuOpen">
                <a href="#">Tenant</a>
@@ -75,6 +72,7 @@
       background-color: var(--clr-white);
       position: absolute;
       width: 100%;
+      /* z-index: 20; */
    }
 
    .brand-logo {
