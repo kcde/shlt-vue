@@ -24,7 +24,7 @@
 
       async mounted() {
          const res = await fetch(
-            "https://abellatsl.com/shelterbackend/public/api/fetchpropertiesrandomly"
+            "http://abellatsl.com/shelterbackend/public/api/fetchpropertiesrandomly"
          );
          const data = await res.json();
          console.log(data);
