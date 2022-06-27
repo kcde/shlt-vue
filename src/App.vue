@@ -27,7 +27,7 @@
             "https://cors-anywhere.herokuapp.com/http://abellatsl.com/shelterbackend/public/api/fetchpropertiesrandomly",
             {
                headers: {
-                  origin: "*",
+                  cors: "no-cors",
                },
             }
          );
