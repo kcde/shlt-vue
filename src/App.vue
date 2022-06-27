@@ -26,7 +26,9 @@
          const res = await fetch(
             "https://cors-anywhere.herokuapp.com/http://abellatsl.com/shelterbackend/public/api/fetchpropertiesrandomly",
             {
-               origin: "*",
+               headers: {
+                  origin: "*",
+               },
             }
          );
          const data = await res.json();
