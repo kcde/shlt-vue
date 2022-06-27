@@ -3,11 +3,17 @@
    import SearchBar from "./components/SearchBar.vue";
    import PropertyCard from "./components/PropertyCard.vue";
    import Footer from "./components/Footer.vue";
+
    // This starter template is using Vue 3 <script setup> SFCs
    // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 
    export default {
-      components: { Header, SearchBar, PropertyCard, Footer },
+      components: {
+         Header,
+         SearchBar,
+         PropertyCard,
+         Footer,
+      },
       data() {
          return {
             name: [1],
@@ -41,19 +47,20 @@
          <SearchBar />
       </div>
    </section>
-
+   <vue-loaders-ball-beat color="red" scale="1"></vue-loaders-ball-beat>
    <section class="property">
       <h2>
          Best property offers and deals
          <span class="text-blue">around you...</span>
       </h2>
 
-      <div class="property__list">
+      <div class="property__list" v-if="properties">
          <PropertyCard
             v-for="property in properties"
             :key="property.id"
             :property="property" />
       </div>
+      <div class="spinning-dots" v-else></div>
    </section>
 
    <Footer />
@@ -172,6 +179,44 @@
       font-weight: 300;
       font-size: 1.5rem;
       margin-bottom: 2rem;
+   }
+
+   @-webkit-keyframes spin {
+      to {
+         -webkit-transform: rotate(360deg);
+         transform: rotate(360deg);
+      }
+   }
+
+   @keyframes spin {
+      to {
+         -webkit-transform: rotate(360deg);
+         transform: rotate(360deg), scale(2);
+      }
+   }
+
+   .spinning-dots {
+      margin: 10rem auto 0 auto;
+      -webkit-animation: spin 1.5s infinite linear;
+      animation: spin 1.5s infinite linear;
+      border-radius: 10px;
+      -webkit-box-shadow: 25px 0px 0 0 var(--blue),
+         15.58725px 19.54579px 0 0 var(--clr-blue),
+         -5.56302px 24.3732px 0 0 var(--clr-blue),
+         -22.52422px 10.84709px 0 0 var(--clr-blue),
+         -22.52422px -10.84709px 0 0 var(--clr-blue),
+         -5.56302px -24.3732px 0 0 var(--clr-blue),
+         15.58725px -19.54579px 0 0 var(--clr-blue);
+      box-shadow: 25px 0px 0 0 var(--clr-blue),
+         15.58725px 19.54579px 0 0 var(--clr-blue),
+         -5.56302px 24.3732px 0 0 var(--clr-blue),
+         -22.52422px 10.84709px 0 0 var(--clr-blue),
+         -22.52422px -10.84709px 0 0 var(--clr-blue),
+         -5.56302px -24.3732px 0 0 var(--clr-blue),
+         15.58725px -19.54579px 0 0 var(--clr-blue);
+      top: 0;
+      height: 10px;
+      width: 10px;
    }
 
    @media screen and (min-width: 768px) {
