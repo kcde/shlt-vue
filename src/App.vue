@@ -24,12 +24,7 @@
 
       async mounted() {
          const res = await fetch(
-            "https://cors-anywhere.herokuapp.com/http://abellatsl.com/shelterbackend/public/api/fetchpropertiesrandomly",
-            {
-               headers: {
-                  cors: "no-cors",
-               },
-            }
+            "https://myshelta.com/shelterbackend/public/api/fetchpropertiesrandomly"
          );
          const data = await res.json();
          console.log(data);
