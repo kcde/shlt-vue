@@ -175,9 +175,10 @@
 
    .property h2 {
       text-align: center;
-      font-weight: 300;
+      font-weight: 600;
       font-size: 1.5rem;
       margin-bottom: 2rem;
+      padding: 0 2rem;
    }
 
    @-webkit-keyframes spin {
@@ -233,6 +234,9 @@
       .property__list {
          display: grid;
          grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      }
+      .property h2 {
+         font-size: 2rem;
       }
    }
 </style>

@@ -48,7 +48,7 @@
       </div>
 
       <div class="footer-copy">
-         <div>
+         <div class="copyright">
             &copy;{{ new Date().getFullYear() }} <span>a product of </span>
             <div class="abella-logo">
                <img :src="abellaLogoUrl" alt="abella logo" />
@@ -56,16 +56,16 @@
          </div>
 
          <div class="footer-icons">
-            <button class="btn social-icon">
+            <button class="social-icon">
                <i class="fa-brands fa-facebook-f"></i>
             </button>
-            <button class="btn social-icon">
+            <button class="social-icon">
                <i class="fa-brands fa-instagram"></i>
             </button>
-            <button class="btn social-icon">
+            <button class="social-icon">
                <i class="fa-brands fa-twitter"></i>
             </button>
-            <button class="btn social-icon">
+            <button class="social-icon">
                <i class="fa-brands fa-linkedin"></i>
             </button>
          </div>
@@ -118,8 +118,12 @@
       color: var(--clr-white);
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding: 1rem 1rem;
       margin-top: 4rem;
+   }
+   .copyright {
+      font-size: 12px;
    }
 
    .abella-logo {
@@ -128,15 +132,11 @@
    }
 
    .social-icon {
-      padding: 5px 10px;
-   }
-
-   .social-icon {
       background-color: transparent;
       color: var(--clr-white);
       font-size: 1rem;
-      border: 1px solid var(--clr-white);
       margin-right: 1rem;
+      padding: 5px;
    }
 
    @media screen and (min-width: 768px) {
