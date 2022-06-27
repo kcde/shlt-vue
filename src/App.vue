@@ -24,7 +24,10 @@
 
       async mounted() {
          const res = await fetch(
-            "http://abellatsl.com/shelterbackend/public/api/fetchpropertiesrandomly"
+            "https://cors-anywhere.herokuapp.com/http://abellatsl.com/shelterbackend/public/api/fetchpropertiesrandomly",
+            {
+               origin: "*",
+            }
          );
          const data = await res.json();
          console.log(data);
@@ -47,7 +50,6 @@
          <SearchBar />
       </div>
    </section>
-   <vue-loaders-ball-beat color="red" scale="1"></vue-loaders-ball-beat>
    <section class="property">
       <h2>
          Best property offers and deals
