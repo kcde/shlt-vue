@@ -2,16 +2,28 @@
    import Header from "./components/Header.vue";
    import SearchBar from "./components/SearchBar.vue";
    import PropertyCard from "./components/PropertyCard.vue";
+   import Footer from "./components/Footer.vue";
    // This starter template is using Vue 3 <script setup> SFCs
    // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 
    export default {
-      components: { Header, SearchBar, PropertyCard },
+      components: { Header, SearchBar, PropertyCard, Footer },
       data() {
          return {
             name: [1],
             location: "",
+            properties: "",
          };
+      },
+
+      async mounted() {
+         const res = await fetch(
+            "http://abellatsl.com/shelterbackend/public/api/fetchpropertiesrandomly"
+         );
+         const data = await res.json();
+         console.log(data);
+         this.properties = data.properties;
+         console.log(this.properties);
       },
    };
 </script>
@@ -37,12 +49,14 @@
       </h2>
 
       <div class="property__list">
-         <PropertyCard />
-         <PropertyCard />
-         <PropertyCard />
-         <PropertyCard />
+         <PropertyCard
+            v-for="property in properties"
+            :key="property.id"
+            :property="property" />
       </div>
    </section>
+
+   <Footer />
 </template>
 
 <style>

@@ -1,40 +1,53 @@
-<script></script>
+<script>
+   export default {
+      props: ["property"],
+      mounted() {
+         console.log(this.property);
+      },
+      computed: {
+         price() {
+            return Number(this.property.price).toLocaleString();
+         },
+      },
+   };
+</script>
 
 <template>
-   <div class="property__card">
+   <div class="property__card" v-if="property">
       <div class="property-img">
-         <img
-            src="https://myshelta.com/shelterbackend/public/storage/properties/adminpshelta957861643969472.jpg"
-            alt=" property image" />
+         <img :src="property.oneimageurl" alt=" property image" />
       </div>
       <div class="property-info">
          <div class="info">
             <p class="property-name">
-               Fully furnished and serviced 4 bedroom Masionette Duplex, at
-               Brains and Hammers Estate, Galadimawa
+               {{ property.title }}
             </p>
             <p class="property-address">
-               <i class="fa-solid fa-location-dot"></i> Lugbe Federal capital
+               <i class="fa-solid fa-location-dot"></i> {{ property.city }},
+               {{ property.state }}
             </p>
-            <p class="property-desc">A block of 2 units of Self-contain</p>
+            <p class="property-desc">{{ property.description }}</p>
          </div>
-         <p class="property-price">₦ 250,000 <span>per annum</span></p>
+         <p class="property-price">
+            ₦ {{ price }}
+            <span>per annum</span>
+         </p>
          <div class="property-details">
             <div>
                <i class="fa-solid fa-bed"></i>
-               <p>3 Bedrooms</p>
+               <p>{{ property.bedrooms }} Bedrooms</p>
             </div>
             <div>
                <i class="fa-solid fa-bath"></i>
-               <p>3 Bathrooms</p>
+               <p>{{ property.bathrooms }} Bathrooms</p>
             </div>
             <div>
                <i class="fa-solid fa-toilet"></i>
-               <p>4 toilet</p>
+               <p>{{ property.toilets }} toilet</p>
             </div>
             <div>
                <i class="fa-solid fa-square-parking"></i>
-               <p>2 parking</p>
+               <p>{{ property.parking }} parking</p>
             </div>
          </div>
       </div>
