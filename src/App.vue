@@ -27,9 +27,7 @@
             "https://myshelta.com/shelterbackend/public/api/fetchpropertiesrandomly"
          );
          const data = await res.json();
-         console.log(data);
          this.properties = data.properties;
-         console.log(this.properties);
       },
    };
 </script>

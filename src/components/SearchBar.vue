@@ -11,17 +11,13 @@
             wfh: true,
          };
       },
-      methods: {
-         log() {
-            console.log(this.location);
-         },
-      },
+      methods: {},
    };
 </script>
 <template>
    <form class="form">
       <div class="input-container">
-         <select id="location" v-model="location" name="location" @change="log">
+         <select id="location" v-model="location" name="location">
             <option :value="null">Desired Location</option>
             <option>Dabhin</option>
             <option>what</option>

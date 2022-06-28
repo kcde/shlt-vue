@@ -1,9 +1,7 @@
 <script>
    export default {
       props: ["property"],
-      mounted() {
-         console.log(this.property);
-      },
+      mounted() {},
       computed: {
          price() {
             return Number(this.property.price).toLocaleString();
