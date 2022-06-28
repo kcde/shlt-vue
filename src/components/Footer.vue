@@ -26,6 +26,8 @@
             </div>
          </div>
 
+         <div style="flex: 1"></div>
+
          <div class="footer-about">
             <div>
                <h6>COMPANY</h6>
@@ -153,7 +155,7 @@
 
       .footer-about {
          display: flex;
-         justify-content: space-around;
+         justify-content: space-between;
          flex: 1;
       }
       .footer-about > * + * {

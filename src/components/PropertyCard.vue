@@ -14,6 +14,7 @@
 
 <template>
    <div class="property__card" v-if="property">
+      <div class="property-tag">Rent</div>
       <div class="property-img">
          <img :src="property.oneimageurl" alt=" property image" />
       </div>
@@ -57,6 +58,10 @@
 <style>
    .info > * + * {
       margin-top: 0.5rem;
+   }
+
+   .property__card {
+      position: relative;
    }
 
    .property-img {
@@ -113,6 +118,20 @@
    .property-details p {
       font-size: 10px;
       font-weight: 600;
+   }
+
+   .property-tag {
+      background-color: var(--clr-blue);
+      background: linear-gradient(180deg, #6886f0, #0033ea 99.48%);
+      color: var(--clr-white);
+      position: absolute;
+      font-size: 14px;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      padding: 2px 0;
+      text-align: center;
    }
 
    @media screen and (min-width: 489px) {
